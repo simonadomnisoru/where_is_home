@@ -34,7 +34,9 @@ class App extends Component {
     render() {
 
         return (
-            <div id='regions_div'></div>
+            <div id="container">
+                <div id="regions_div"></div>
+            </div>
         );
     }
 }
