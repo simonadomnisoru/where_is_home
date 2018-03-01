@@ -1,7 +1,7 @@
 'use strict'
 var express = require('express');
 var mongoose = require('mongoose');
-var MapData = require('../models/map');
+var Country = require('../models/country');
 var credentials = require('./dbcredentials.js');
 var router = express.Router();
 
@@ -14,21 +14,19 @@ router.get('/', function (req, res) {
 
 router.route('/data')
     .get(function (req, res) {
-        MapData.find(function (err, mapData) {
+        Country.find(function (err, mapData) {
             if (err)
                 res.send(err);
             res.json(mapData);
         });
     })
     .post(function (req, res) {
-        var mapData = new MapData();
-        //body parser lets us use the req.body
-        mapData.country = req.body.country;
-        mapData.value = req.body.value;
-        mapData.save(function (err) {
+        var country = new Country();
+        country.name = req.body.name;
+        country.save(function (err) {
             if (err)
                 res.send(err);
-            res.json({ message: 'mapData successfully added!' });
+            res.json({ message: 'Country successfully added!' });
         });
     });
 module.exports = router;

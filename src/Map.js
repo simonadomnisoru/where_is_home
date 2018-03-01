@@ -33,7 +33,6 @@ class Map extends Component {
         var chart = new google.visualization.GeoChart(document.getElementById('map'));
         axios.get('http://localhost:3001/data')
             .then(res => {
-                console.log(res.data);
                 var dataTable = formatJson(res.data);
                 chart.draw(google.visualization.arrayToDataTable(dataTable), options);
             })

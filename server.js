@@ -1,11 +1,11 @@
 'use strict'
 var bodyParser = require('body-parser');
 var express = require('express');
+var insertstuff = require('./dbScripts/CountriesInsert.js');
 
 var app = express();
 var port = process.env.API_PORT || 3001;
-//now we should configure the API to use bodyParser and look for
-//JSON data in the request body
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -22,3 +22,5 @@ app.use(require('./controllers/map'));
 app.listen(port, function () {
     console.log('api running on port ${port}');
 });
+
+//insertstuff();
