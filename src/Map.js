@@ -6,15 +6,16 @@ var google = window.google;
 var options = {
     colorAxis: { colors: ['red', 'orange', 'green'] }
 };
-var data = [
-    ['Country', 'Popularity'],
-    ['Germany', 200],
-    ['United States', 300],
-    ['Brazil', 400],
-    ['Canada', 500],
-    ['France', 600],
-    ['RU', 700]
-];
+
+var formatJson = (json) => {
+    var keys = Object.keys(json);
+    var array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        array.push([key, json[key]])
+    }
+    return array;
+}
 class Map extends Component {
     constructor(props) {
         super(props);
@@ -27,13 +28,15 @@ class Map extends Component {
         })
         google.charts.setOnLoadCallback(this.drawRegionsMap);
     }
+
     drawRegionsMap = () => {
         var chart = new google.visualization.GeoChart(document.getElementById('map'));
-        axios.get('http://localhost:3001/mapData/')
+        axios.get('http://localhost:3001/data')
             .then(res => {
-               console.log(res);
-        })
-        chart.draw(google.visualization.arrayToDataTable(data), options);
+                console.log(res.data);
+                var dataTable = formatJson(res.data);
+                chart.draw(google.visualization.arrayToDataTable(dataTable), options);
+            })
     }
     componentDidMount() {
         this.renderMap();
