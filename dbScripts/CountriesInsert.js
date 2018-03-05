@@ -1,7 +1,7 @@
 'use strict';
 var mongoose = require('mongoose');
 var Country = require('../models/country');
-var CountryList = require('./CountriesNames');
+var CountryList = require('./countriesNames');
 
 mongoose.connect(require('../controllers/dbcredentials'));
 var Schema = mongoose.Schema;
@@ -27,11 +27,11 @@ var CreateCountriesCollection = function () {
         }, { collection: item.value });
 
         var CriterionModel = mongoose.model(item.value, CriterionSchema);
-        var criteria = new CriterionModel();
-        criteria.name = "Currency Euro"; // for test purpose
-        criteria.value = 1; // for test purpose
-        criteria.country_id = country._id;
-        criteria.save();
+        var criterion = new CriterionModel();
+        criterion.name = "Currency Euro"; // for test purpose
+        criterion.value = 1; // for test purpose
+        criterion.country_id = country._id;
+        criterion.save();
     });
 }
 

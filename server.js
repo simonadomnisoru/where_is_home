@@ -1,7 +1,9 @@
 'use strict'
 var bodyParser = require('body-parser');
 var express = require('express');
-var insertstuff = require('./dbScripts/CountriesInsert.js');
+var insertstuff = require('./dbScripts/countriesInsert.js');
+var insertCriterion = require('./dbScripts/criterionsInsert.js');
+var findCriterion = require('./dbScripts/criterionsFind.js');
 
 var app = express();
 var port = process.env.API_PORT || 3001;
@@ -22,5 +24,7 @@ app.use(require('./controllers/map'));
 app.listen(port, function () {
     console.log('api running on port ${port}');
 });
+//insertCriterion("test");
 
 //insertstuff();
+findCriterion('Afghanistan');

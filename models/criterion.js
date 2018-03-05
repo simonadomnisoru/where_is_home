@@ -2,18 +2,25 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Criterion = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    country_id: {
-        type: String,
-        required: true
-    },
-    value: {
-        type: Number,
-    },
-}, { collection: 'Criterions' });
+var CreateCriterionSchema = function (countryName) {
+    var CriterionSchema = new Schema({
+        name: {
+            type: String,
+            required: true
+        },
+        country_id: {
+            type: String,
+            required: true
+        },
+        value: {
+            type: Number,
+        }
+    }, {
+        collection: countryName
+    });
 
-module.exports = mongoose.model('Criterion', Criterion);
+    var CriterionModel = mongoose.model(countryName, CriterionSchema);
+    return CriterionModel;
+}
+
+module.exports = CreateCriterionSchema;

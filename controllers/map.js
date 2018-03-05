@@ -6,7 +6,7 @@ var credentials = require('./dbcredentials.js');
 var router = express.Router();
 
 mongoose.connect(require('./dbcredentials'));
-//var data = { Country: 'Popularity', Germany: 200, Canada: 500 };
+var data = { Country: 'Popularity', Germany: 200, Canada: 500 };
 
 router.get('/', function (req, res) {
     res.json({ message: 'API Initialized!' });
@@ -17,7 +17,7 @@ router.route('/data')
         Country.find(function (err, mapData) {
             if (err)
                 res.send(err);
-            res.json(mapData);
+            res.json(data);
         });
     })
     .post(function (req, res) {
