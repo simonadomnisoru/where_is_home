@@ -1,4 +1,4 @@
-var country_list = [
+var countryList = [
     {
         "id": "0",
         "value": "",
@@ -1221,4 +1221,4 @@ var country_list = [
     }
 ];
 
-module.exports = country_list;
+module.exports = countryList;
