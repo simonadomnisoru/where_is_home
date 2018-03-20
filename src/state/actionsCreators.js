@@ -3,5 +3,5 @@ export default function changePage(type) {
     return {
         type: "LOGIN",
         text: ""
-      }
-};
+      };
+}
