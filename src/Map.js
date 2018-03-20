@@ -12,7 +12,9 @@ var formatJson = (json) => {
     var array = [];
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
-        array.push([key, json[key]]);
+        var value = json[key];
+        if(value !== undefined)
+            array.push([key, json[key]]);
     }
     return array;
 };
@@ -35,7 +37,7 @@ class Map extends Component {
             .then((res) => {
                 var dataTable = formatJson(res.data);
                 chart.draw(google.visualization.arrayToDataTable(dataTable), options);
-            })
+            });
     }
     componentDidMount() {
         this.renderMap();
