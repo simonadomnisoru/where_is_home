@@ -26,13 +26,13 @@ var CreateCountriesCollection = function () {
             }
         }, { collection: item.value });
 
-        var CriterionModel = mongoose.model(item.value, CriterionSchema);
-        var criterion = new CriterionModel();
+        var criterionModel = mongoose.model(item.value, CriterionSchema);
+        var criterion = new criterionModel();
         criterion.name = "Currency Euro"; // for test purpose
         criterion.value = 1; // for test purpose
         criterion.countryId = country._id;
         criterion.save();
     });
-}
+};
 
 module.exports = CreateCountriesCollection;

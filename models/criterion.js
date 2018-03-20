@@ -19,8 +19,8 @@ var CreateCriterionSchema = function (countryName) {
         collection: countryName
     });
 
-    var CriterionModel = mongoose.model(countryName, CriterionSchema);
-    return CriterionModel;
-}
+    var criterionModel = mongoose.model(countryName, CriterionSchema);
+    return criterionModel;
+};
 
 module.exports = CreateCriterionSchema;

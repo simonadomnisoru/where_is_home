@@ -1,5 +1,5 @@
 import actionTypes from "./actionTypes";
-import { combineReducers } from "redux"
+import { combineReducers } from "redux";
 
 // Define a reducer
 function reducerPageRouter(state, action) {
@@ -12,8 +12,8 @@ function reducerPageRouter(state, action) {
     if (action.type === actionTypes.VIDEODETAILS) {
         return { pageToDisplay: actionTypes.VIDEODETAILS };
     }
-    return state
-}
+    return state;
+};
 
 /*const reducers = combineReducers({
     reducerPageRouter

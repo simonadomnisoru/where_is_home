@@ -6,8 +6,8 @@ var CountryList = require("./countriesNames");
 var InsertCriterion = function (name) {
     Country.find({}, function (err, countries) {
         countries.forEach(function (country) {
-            var CriterionModel = Criterion(country.name);
-            var criterion = new CriterionModel();
+            var criterionModel = Criterion(country.name);
+            var criterion = new criterionModel();
             criterion.name = name;
             criterion.value = 0;
             criterion.countryId = country._id;

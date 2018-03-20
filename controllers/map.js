@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 var express = require("express");
 var mongoose = require("mongoose");
 var Country = require("../models/country");
