@@ -10,12 +10,12 @@ var options = {
 var formatJson = (json) => {
     var keys = Object.keys(json);
     var array = [];
-    for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
+    keys.forEach(function (key, index){
         var value = json[key];
-        if(value !== undefined)
-            array.push([key, json[key]]);
-    }
+        if(value !== undefined) {
+            array.push([key, value]);
+        }
+    })
     return array;
 };
 class Map extends Component {
