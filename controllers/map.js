@@ -1,5 +1,5 @@
-"use strict"
-var express = require("express");
+'use strict'
+var express = require('express');
 var mongoose = require('mongoose');
 var Country = require('../models/country');
 var credentials = require('./dbcredentials.js');

@@ -24,7 +24,7 @@ app.use(require('./controllers/map'));
 app.listen(port, function () {
     console.log('api running on port ${port}');
 });
-//insertCriterion("test");
+//insertCriterion('test');
 
 //insertstuff();
 findCriterion('Afghanistan');

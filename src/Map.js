@@ -44,8 +44,8 @@ class Map extends Component {
     render() {
 
         return (
-            <div id="rotate">
-                <div id="map"></div>
+            <div id='rotate'>
+                <div id='map'></div>
             </div>
         );
     }

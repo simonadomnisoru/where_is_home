@@ -5,7 +5,7 @@ class Criterion extends Component {
 
         return (
             <div>
-               Inser form
+               Insert frm
             </div>
 
         );

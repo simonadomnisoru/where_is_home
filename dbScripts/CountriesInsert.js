@@ -28,7 +28,7 @@ var CreateCountriesCollection = function () {
 
         var CriterionModel = mongoose.model(item.value, CriterionSchema);
         var criterion = new CriterionModel();
-        criterion.name = "Currency Euro"; // for test purpose
+        criterion.name = 'Currency Euro'; // for test purpose
         criterion.value = 1; // for test purpose
         criterion.country_id = country._id;
         criterion.save();
