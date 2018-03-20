@@ -13,7 +13,7 @@ function reducerPageRouter(state, action) {
         return { pageToDisplay: actionTypes.VIDEODETAILS };
     }
     return state;
-};
+}
 
 /*const reducers = combineReducers({
     reducerPageRouter

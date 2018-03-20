@@ -12,10 +12,10 @@ var formatJson = (json) => {
     var array = [];
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
-        array.push([key, json[key]])
+        array.push([key, json[key]]);
     }
     return array;
-}
+};
 class Map extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ class Map extends Component {
         google.charts.load("current", {
             "packages": ["geochart"],
             "mapsApiKey": Credentials.GeoChartKey
-        })
+        });
         google.charts.setOnLoadCallback(this.drawRegionsMap);
     }
 

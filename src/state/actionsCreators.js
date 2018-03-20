@@ -4,4 +4,4 @@ export default function changePage(type) {
         type: "LOGIN",
         text: ""
       }
-}
+};
