@@ -1,22 +1,23 @@
-'use strict'
-var express = require('express');
-var mongoose = require('mongoose');
-var Country = require('../models/country');
-var credentials = require('./dbcredentials.js');
+"use strict"
+var express = require("express");
+var mongoose = require("mongoose");
+var Country = require("../models/country");
+var credentials = require("./dbcredentials.js");
 var router = express.Router();
 
-mongoose.connect(require('./dbcredentials'));
-var data = { Country: 'Popularity', Germany: 200, Canada: 500 };
+mongoose.connect(require("./dbcredentials"));
+var data = { Country: "Popularity", Germany: 200, Canada: 500 };
 
-router.get('/', function (req, res) {
-    res.json({ message: 'API Initialized!' });
+router.get("/", function (req, res) {
+    res.json({ message: "API Initialized!" });
 });
 
-router.route('/data')
+router.route("/data")
     .get(function (req, res) {
         Country.find(function (err, mapData) {
-            if (err)
+            if (err) {
                 res.send(err);
+            }
             res.json(data);
         });
     })
@@ -24,9 +25,10 @@ router.route('/data')
         var country = new Country();
         country.name = req.body.name;
         country.save(function (err) {
-            if (err)
+            if (err) {
                 res.send(err);
-            res.json({ message: 'Country successfully added!' });
+            }
+            res.json({ message: "Country successfully added!" });
         });
     });
 module.exports = router;

@@ -1,5 +1,5 @@
-'use strict';
-var mongoose = require('mongoose');
+"use strict";
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var Country = new Schema({
@@ -7,6 +7,6 @@ var Country = new Schema({
         type: String,
         required: true
     }
-}, { collection: 'Countries' });
+}, { collection: "Countries" });
 
-module.exports = mongoose.model('Country', Country);
+module.exports = mongoose.model("Country", Country);

@@ -1,9 +1,9 @@
-'use strict';
-var mongoose = require('mongoose');
-var Country = require('../models/country');
-var CountryList = require('./countriesNames');
+"use strict";
+var mongoose = require("mongoose");
+var Country = require("../models/country");
+var CountryList = require("./countriesNames");
 
-mongoose.connect(require('../controllers/dbcredentials'));
+mongoose.connect(require("../controllers/dbcredentials"));
 var Schema = mongoose.Schema;
 
 var CreateCountriesCollection = function () {
@@ -17,7 +17,7 @@ var CreateCountriesCollection = function () {
                 type: String,
                 required: true
             },
-            country_id: {
+            countryId: {
                 type: String,
                 required: true
             },
@@ -28,9 +28,9 @@ var CreateCountriesCollection = function () {
 
         var CriterionModel = mongoose.model(item.value, CriterionSchema);
         var criterion = new CriterionModel();
-        criterion.name = 'Currency Euro'; // for test purpose
+        criterion.name = "Currency Euro"; // for test purpose
         criterion.value = 1; // for test purpose
-        criterion.country_id = country._id;
+        criterion.countryId = country._id;
         criterion.save();
     });
 }

@@ -1,5 +1,5 @@
-'use strict';
-var mongoose = require('mongoose');
+"use strict";
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var CreateCriterionSchema = function (countryName) {
@@ -8,7 +8,7 @@ var CreateCriterionSchema = function (countryName) {
             type: String,
             required: true
         },
-        country_id: {
+        countryId: {
             type: String,
             required: true
         },

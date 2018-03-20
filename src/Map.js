@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Credentials from './credentials.js';
+import React, { Component } from "react";
+import axios from "axios";
+import Credentials from "./credentials.js";
 
 var google = window.google;
 var options = {
-    colorAxis: { colors: ['red', 'orange', 'green'] }
+    colorAxis: { colors: ["red", "orange", "green"] }
 };
 
 var formatJson = (json) => {
@@ -22,17 +22,17 @@ class Map extends Component {
     }
 
     renderMap = () => {
-        google.charts.load('current', {
-            'packages': ['geochart'],
-            'mapsApiKey': Credentials.GeoChartKey
+        google.charts.load("current", {
+            "packages": ["geochart"],
+            "mapsApiKey": Credentials.GeoChartKey
         })
         google.charts.setOnLoadCallback(this.drawRegionsMap);
     }
 
     drawRegionsMap = () => {
-        var chart = new google.visualization.GeoChart(document.getElementById('map'));
-        axios.get('http://localhost:3001/data')
-            .then(res => {
+        var chart = new google.visualization.GeoChart(document.getElementById("map"));
+        axios.get("http://localhost:3001/data")
+            .then((res) => {
                 var dataTable = formatJson(res.data);
                 chart.draw(google.visualization.arrayToDataTable(dataTable), options);
             })
@@ -44,8 +44,8 @@ class Map extends Component {
     render() {
 
         return (
-            <div id='rotate'>
-                <div id='map'></div>
+            <div id="rotate">
+                <div id="map"></div>
             </div>
         );
     }

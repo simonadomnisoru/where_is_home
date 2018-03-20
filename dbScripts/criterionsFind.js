@@ -1,5 +1,5 @@
-'use strict';
-var Criterion = require('../models/criterion');
+"use strict";
+var Criterion = require("../models/criterion");
 
 var FindCriterionsByCountryName = function (name) {
     var CriterionModel = Criterion(name);
