@@ -1,16 +1,11 @@
 var countryList = [
     {
-        "id": "0",
-        "value": "",
-        "code": ""
-    },
-    {
         "value": "Afghanistan",
         "code": "AF",
         "id": "Afghanistan"
     },
     {
-        "value": "Ã…land Islands",
+        "value": "Åland Islands",
         "code": "AX",
         "id": "Ã…land Islands"
     },
@@ -30,9 +25,9 @@ var countryList = [
         "id": "American Samoa"
     },
     {
-        "value": "AndorrA",
+        "value": "Andorr",
         "code": "AD",
-        "id": "AndorrA"
+        "id": "Andorr"
     },
     {
         "value": "Angola",

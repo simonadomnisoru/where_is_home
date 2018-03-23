@@ -1,8 +1,7 @@
 // Define action types
 const actionTypes = {
-    LOGIN: "pageLogin",
-    VIDEOS: "pageVideos",
-    VIDEODETAILS: "pageVideoDetails"
+    MAP: "pageMap",
+    CRITERION: "pageAddCriterion"
 };
 
 export default actionTypes;

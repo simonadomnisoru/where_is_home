@@ -4,7 +4,7 @@ import reducerPageRouter from "./reducer";
 
 // Define the initial state of our store
 const initialState = {
-    pageToDisplay: actionTypes.LOGIN
+    pageToDisplay: actionTypes.MAP
 };
 
 // Create a store, passing our reducer function and our initial state

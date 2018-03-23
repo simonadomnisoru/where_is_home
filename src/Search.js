@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { DropdownButton, MenuItem, Button, Row, Grid, Col } from "react-bootstrap";
 class Search extends Component {
-
     render() {
 
         return (
@@ -35,7 +34,6 @@ class Search extends Component {
                     </Row>
                 </Grid>
             </div>
-
         );
     }
 }
