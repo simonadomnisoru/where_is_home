@@ -1005,11 +1005,6 @@ var countryList = [
         "id": "South Africa"
     },
     {
-        "value": "South Georgia and the South Sandwich Islands",
-        "code": "GS",
-        "id": "South Georgia and the South Sandwich Islands"
-    },
-    {
         "value": "Spain",
         "code": "ES",
         "id": "Spain"
