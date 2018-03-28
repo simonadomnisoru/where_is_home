@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Credentials from "./credentials.js";
+import Credentials from "../helpers/credentials.js";
 
 var google = window.google;
 var options = {

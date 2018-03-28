@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Button } from "react-bootstrap";
-import actionTypes from "./state/actionTypes";
-import store from "./state/store";
+import actionTypes from "../state/actionTypes";
+import store from "../state/store";
 class ButtonNavigation extends Component {
     constructor() {
         super();

@@ -8,10 +8,6 @@
         crossorigin="anonymous">
     <title>Where is home</title>
     <style>
-        body {
-            background-color: antiquewhite;
-        }
-
         #rotate {
             -webkit-transform: rotate(180deg);
             -moz-transform: rotate(180deg);
@@ -32,6 +28,7 @@
         }
 
         #map {
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
             margin: 0 auto;
             width: 700px;
             height: 500px;
@@ -41,8 +38,31 @@
             padding-top: 50px;
             padding-bottom: 20px;
         }
+
         .row {
             margin-bottom: 5px;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        .header-button-text {
+            font-family: montserrat;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 4px;
+            padding: 1rem;
+            line-height: 1.4;
+        }
+
+        #logo-image {
+            height: 50px;
+        }
+
+        #logo-image-wrapper {
+            padding: 0px;
         }
     </style>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

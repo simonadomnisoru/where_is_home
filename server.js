@@ -22,6 +22,7 @@ app.use(function (req, res, next) {
 
 app.use(require("./controllers/contries"));
 app.use(require("./controllers/map"));
+app.use(require("./controllers/criterion"));
 app.listen(port, function () {
     console.log("api running on port ${port}");
 });
