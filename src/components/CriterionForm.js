@@ -6,7 +6,7 @@ import actionTypes from "../state/actionTypes";
 import Validation from "../helpers/Validation";
 import { FormGroup, ControlLabel, FormControl, Col, Grid, Row, Button } from "react-bootstrap";
 
-class Criterion extends Component {
+class CriterionForm extends Component {
     constructor(props, context) {
         super(props, context);
         this.countriesValue = [];
@@ -123,4 +123,4 @@ class Criterion extends Component {
     }
 }
 
-export default Criterion;
+export default CriterionForm;

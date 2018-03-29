@@ -1,0 +1,71 @@
+#rotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    padding-bottom: 350px;
+}
+
+#root {
+    margin: 0 auto;
+    width: 900px;
+    background-color: white;
+}
+
+#search_box {
+    margin-top: 50px;
+}
+
+#map {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    width: 700px;
+    height: 500px;
+}
+
+#criterionForm {
+    padding-bottom: 20px;
+    padding-top: 350px!important;
+}
+
+.page-content {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    z-index: 99;
+}
+
+.row {
+    margin-bottom: 5px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.header-button-text {
+    font-family: montserrat;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 4px;
+    padding: 1rem;
+    line-height: 1.4;
+}
+
+#logo-image {
+    height: 50px;
+}
+
+#logo-image-wrapper {
+    padding: 0px;
+}
+
+#cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 300px
+}
