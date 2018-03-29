@@ -1,45 +1,46 @@
 import React, { Component } from "react";
-import axios from "axios";
-import _ from "lodash";
-import ButtonNavigation from "./ButtonNavigation";
-import actionTypes from "../state/actionTypes";
 import Validation from "../helpers/Validation";
-import { FormGroup, ControlLabel, FormControl, Col, Grid, Row, Button } from "react-bootstrap";
+import { ControlLabel, FormControl, Col, Grid, Row, HelpBlock } from "react-bootstrap";
 
 class CriterionCountry extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.countriesValue = [];
+    constructor(props) {
+        super(props);
+        this.state = {
+            classNameInput: "",
+            classNameTextValidation: "error-text-hidden"
+        };
     }
 
     handleChange = (element) => {
         var key = element.dataset.key;
         var value = element.value;
         if (!Validation(value)) {
-            //show validation
+            this.setState({ classNameInput: "input-error" });
+            this.setState({ classNameTextValidation: "error-text-show" });
         }
-        this.countriesValue[key] = value;
+        else {
+            this.setState({ classNameInput: "" });
+            this.setState({ classNameTextValidation: "error-text-hidden" });
+            this.props.setValue({ key : key, value : value});
+        }
     }
 
     renderCountries = () => {
-        if (this.state && this.state.countries) {
-            var keys = Object.keys(this.state.countries);
-            const listItems = keys.map((key) =>
-                <Row key={key}>
-                    <Col xs={3}>
-                        <ControlLabel>{this.state.countries[key]}</ControlLabel>
-                    </Col>
-                    <Col xs={4}>
-                        <FormControl id={"country_" + key} data-key={key}
-                            onChange={(e) => this.handleChange(e.target)} />
-                        <FormControl.Feedback />
-                    </Col>
-                </Row>
-            );
-            return (
-                <div>{listItems}</div>
-            );
-        }
+        return (
+            <Row key={this.props.id}>
+                <Col xs={3}>
+                    <ControlLabel>{this.props.name}</ControlLabel>
+                </Col>
+                <Col xs={4}>
+                    <FormControl data-key={this.props.id}
+                        onChange={(e) => this.handleChange(e.target)}
+                        className={this.state.classNameInput} />
+                     <HelpBlock className={this.state.classNameTextValidation}>
+                        Please insert a value like "Yes", "No" or a number.
+                     </HelpBlock>
+                </Col>
+            </Row>
+        )
     }
 
     render() {
