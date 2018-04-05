@@ -1,5 +1,4 @@
-import {actionTypes } from "./actionTypes";
-export default function changePage(type) {
+export default function changePage() {
     return {
         type: "LOGIN",
         text: ""
