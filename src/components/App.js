@@ -6,13 +6,13 @@ import ButtonNavigation from "./ButtonNavigation";
 import Header from "./Header";
 import actionTypes from "../state/actionTypes";
 import store from "../state/store";
-import '../style/style.css';
+import "../style/style.css";
 class App extends Component {
     constructor() {
         super();
         this.state = {
             pageToDisplay: store.getState().pageToDisplay,
-        }
+        };
         store.subscribe( () => {
             this.setState({ pageToDisplay: store.getState().pageToDisplay });
         });
@@ -20,13 +20,13 @@ class App extends Component {
     renderPage = () => {
         switch (this.state.pageToDisplay) {
             case actionTypes.MAP:
-                return <div class="page-content">
+                return <div className="page-content">
                     <Map />
                     <Search />
-                    <ButtonNavigation pageToGo={actionTypes.CRITERION} label="Insert new criterion"/>
-                </div>
+                    <ButtonNavigation pageToGo={actionTypes.CRITERION} label="Insert new criterion" className="btn btn-info"/>
+                </div>;
             case actionTypes.CRITERION:
-                return <div class="page-content"><CriterionForm /></div>
+                return <div className="page-content"><CriterionForm /></div>;
             default:
                 return null;
         }
@@ -36,7 +36,7 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <img src={require('../style/map-cover.png')} id="cover-image" alt=""/>
+                <img src={require("../style/map-cover.png")} id="cover-image" alt=""/>
                 {this.renderPage()}
             </div>
         );

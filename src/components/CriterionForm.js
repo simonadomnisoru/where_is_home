@@ -20,7 +20,6 @@ class CriterionForm extends Component {
         axios.get("http://localhost:3001/contries")
             .then((response) => {
                 if (response.status === 200) {
-                    console.log(response.data);
                     this.setState({ countries: response.data });
                 }
             });
@@ -56,10 +55,10 @@ class CriterionForm extends Component {
         return (
             <Row>
                 <Col xs={2}>
-                    <ButtonNavigation pageToGo={actionTypes.MAP} label="Return to Map" />
+                    <ButtonNavigation pageToGo={actionTypes.MAP} label="Return to Map" className="btn btn-info"/>
                 </Col>
                 <Col xs={2} xsOffset={5}>
-                    <Button bsStyle="success" onClick={this.handleSubmit}>Insert Criterion</Button>
+                    <Button bsStyle="success" onClick={this.handleSubmit} className="btn btn-success">Insert Criterion</Button>
                 </Col>
             </Row>
         );
@@ -68,7 +67,6 @@ class CriterionForm extends Component {
         var isValid = this.countriesValue.filter(function (item, key) {
             return Validation(item.value);
         })
-        console.log(isValid.length, _.size(this.state.countries), this.countriesValue);
         if (isValid.length === _.size(this.state.countries)) {
             console.log('ready for ajax');
         }

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import {Button } from "react-bootstrap";
-import actionTypes from "../state/actionTypes";
 import store from "../state/store";
 class ButtonNavigation extends Component {
     constructor() {
@@ -11,7 +9,7 @@ class ButtonNavigation extends Component {
     }
     render() {
         return (
-            <Button bsStyle="info" onClick={this.handleClick}>{this.props.label }</Button>
+            <button type="button" onClick={this.handleClick} className={this.props.className}>{this.props.label }</button>
         );
     }
 }

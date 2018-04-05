@@ -1,5 +1,4 @@
 import actionTypes from "./actionTypes";
-import { combineReducers } from "redux";
 
 // Define a reducer
 function reducerPageRouter(state, action) {

@@ -1,7 +1,6 @@
 "use strict";
 var Country = require("../models/country");
 var Criterion = require("../models/criterion");
-var CountryList = require("./countriesNames");
 
 var InsertCriterion = function (name) {
     Country.find({}, function (err, countries) {

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ButtonNavigation from "./ButtonNavigation";
+import actionTypes from "../state/actionTypes";
 class Header extends Component {
     render() {
         return (
@@ -18,14 +20,10 @@ class Header extends Component {
                         <div className="collapse navbar-collapse navbar-top-collapse">
                             <ul className="nav navbar-nav navbar-right" id="top_menu">
                                 <li>
-                                    <a href="/en_US/">
-                                        <span className="header-button-text">Map</span>
-                                    </a>
+                                    <ButtonNavigation pageToGo={actionTypes.MAP} className="btn btn-link header-button-text" label="Map"/>
                                 </li>
                                 <li>
-                                    <a href="/en_US/page/leistungen">
-                                        <span className="header-button-text">Criterion</span>
-                                    </a>
+                                    <ButtonNavigation pageToGo={actionTypes.CRITERION} className="btn btn-link header-button-text" label="Criterion"/>
                                 </li>
                             </ul>
                         </div>
