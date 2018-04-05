@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import _ from "lodash";
 import Credentials from "../helpers/credentials.js";
 
 var google = window.google;
@@ -12,7 +13,7 @@ var formatJson = (json) => {
     var array = [];
     keys.forEach(function (key, index){
         var value = json[key];
-        if(value !== undefined) {
+        if(!_.isUndefined(value)) {
             array.push([key, value]);
         }
     });

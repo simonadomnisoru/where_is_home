@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import _ from "lodash";
 import ButtonNavigation from "./ButtonNavigation";
