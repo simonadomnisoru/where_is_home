@@ -14,7 +14,7 @@ class Header extends Component {
                                 <span className="icon-bar"></span>
                             </button>
                             <a href="/en_US/" className="navbar-brand logo" id= "logo-image-wrapper">
-                                <img src={require('../style/logo.png')} alt="Where is home" id= "logo-image"/>
+                                <img src={require("../style/logo.png")} alt="Where is home" id= "logo-image"/>
                             </a>
                         </div>
                         <div className="collapse navbar-collapse navbar-top-collapse">
