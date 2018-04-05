@@ -40,7 +40,7 @@ class CriterionCountry extends Component {
                      </HelpBlock>
                 </Col>
             </Row>
-        )
+        );
     }
 
     render() {

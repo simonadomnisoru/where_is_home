@@ -66,9 +66,9 @@ class CriterionForm extends Component {
     handleSubmit = () => {
         var isValid = this.countriesValue.filter(function (item, key) {
             return Validation(item.value);
-        })
+        });
         if (isValid.length === _.size(this.state.countries)) {
-            console.log('ready for ajax');
+            console.log("ready for ajax");
         }
         this.sentCriterion(this.countriesValue);
     }
@@ -84,7 +84,7 @@ class CriterionForm extends Component {
                 id={value.key}
                 name={value.name}
                 setValue={this.setValue}
-            />
+            />;
         });
         return (
             <div>{listItems}</div>
@@ -99,7 +99,7 @@ class CriterionForm extends Component {
                     {this.renderCountries()}
                     {this.renderButtons()}
                 </Grid>
-            )
+            );
         }
     }
 
