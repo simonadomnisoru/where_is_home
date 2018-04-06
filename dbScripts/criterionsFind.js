@@ -1,8 +1,8 @@
 "use strict";
-var Criterion = require("../models/criterion");
+const Criterion = require("../models/criterion");
 
-var FindCriterionsByCountryName = function (name) {
-    var criterionModel = Criterion(name);
+let FindCriterionsByCountryName = function (name) {
+    let criterionModel = Criterion(name);
     criterionModel.find({}, function (err, criterions) {
         //console.log(criterions);
     });

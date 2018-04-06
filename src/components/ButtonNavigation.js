@@ -1,17 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import store from "../state/store";
-class ButtonNavigation extends Component {
-    constructor() {
-        super();
-    }
-    handleClick= () => {
-        store.dispatch({ type: this.props.pageToGo });
-    }
+
+export default class ButtonNavigation extends React.PureComponent {
     render() {
         return (
-            <button type="button" onClick={this.handleClick} className={this.props.className}>{this.props.label }</button>
+            <button type="button"
+                onClick={() => store.dispatch({ type: this.props.pageToGo })}
+                className={this.props.className}>
+                {this.props.label}
+            </button>
         );
     }
 }
-
-export default ButtonNavigation;

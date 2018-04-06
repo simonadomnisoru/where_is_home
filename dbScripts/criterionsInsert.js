@@ -1,12 +1,12 @@
 "use strict";
-var Country = require("../models/country");
-var Criterion = require("../models/criterion");
+const Country = require("../models/country");
+const Criterion = require("../models/criterion");
 
-var InsertCriterion = function (name) {
+let InsertCriterion = function (name) {
     Country.find({}, function (err, countries) {
         countries.forEach(function (country) {
-            var CriterionModel = Criterion(country.name);
-            var criterion = new CriterionModel();
+            let CriterionModel = Criterion(country.name);
+            let criterion = new CriterionModel();
             criterion.name = name;
             criterion.value = 0;
             criterion.countryId = country._id;

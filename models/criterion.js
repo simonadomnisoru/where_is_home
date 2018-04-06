@@ -1,9 +1,9 @@
 "use strict";
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var CreateCriterionSchema = function (countryName) {
-    var CriterionSchema = new Schema({
+let CreateCriterionSchema = function (countryName) {
+    let CriterionSchema = new Schema({
         name: {
             type: String,
             required: true
@@ -19,7 +19,7 @@ var CreateCriterionSchema = function (countryName) {
         collection: countryName
     });
 
-    var criterionModel = mongoose.model(countryName, CriterionSchema);
+    let criterionModel = mongoose.model(countryName, CriterionSchema);
     return criterionModel;
 };
 

@@ -1,4 +1,4 @@
-var Validation = (function () {
+let Validation = (function () {
     const validValues = [/\byes\b/, /\bno\b/, /^[+-]?\d+(\.\d+)?$/];
 
     return function(value) {

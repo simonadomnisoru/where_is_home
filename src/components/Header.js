@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import ButtonNavigation from "./ButtonNavigation";
 import actionTypes from "../state/actionTypes";
-class Header extends Component {
+export default class Header extends React.PureComponent {
     render() {
         return (
             <header>
@@ -33,5 +33,3 @@ class Header extends Component {
         );
     }
 }
-
-export default Header;

@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { DropdownButton, MenuItem, Button, Row, Grid, Col } from "react-bootstrap";
-class Search extends Component {
+export default class Search extends React.PureComponent {
     render() {
-
         return (
             <div id="search_box">
                 <Grid>
@@ -37,5 +36,3 @@ class Search extends Component {
         );
     }
 }
-
-export default Search;

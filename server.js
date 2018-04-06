@@ -1,12 +1,12 @@
 "use strict";
-var bodyParser = require("body-parser");
-var express = require("express");
-var insertstuff = require("./dbScripts/countriesInsert.js");
-var insertCriterion = require("./dbScripts/criterionsInsert.js");
-var findCriterion = require("./dbScripts/criterionsFind.js");
+const bodyParser = require("body-parser");
+const express = require("express");
+const insertstuff = require("./dbScripts/countriesInsert.js");
+const insertCriterion = require("./dbScripts/criterionsInsert.js");
+const findCriterion = require("./dbScripts/criterionsFind.js");
 
-var app = express();
-var port = process.env.API_PORT || 3001;
+let app = express();
+let port = process.env.API_PORT || 3001;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -29,4 +29,4 @@ app.listen(port, function () {
 
 //insertCriterion("test");
 //insertstuff();
-findCriterion("Afghanistan");
+//findCriterion("Afghanistan");

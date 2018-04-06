@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Validation from "../helpers/Validation";
 import { ControlLabel, FormControl, Col, Grid, Row, HelpBlock } from "react-bootstrap";
 
-class CriterionCountry extends Component {
+class CriterionCountry extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,8 +12,8 @@ class CriterionCountry extends Component {
     }
 
     handleChange = (element) => {
-        var key = element.dataset.key;
-        var value = element.value;
+        let key = element.dataset.key;
+        let value = element.value;
         if (!Validation(value)) {
             this.setState({ classNameInput: "input-error" });
             this.setState({ classNameTextValidation: "error-text-show" });

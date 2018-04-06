@@ -1,25 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import _ from "lodash";
 import Credentials from "../helpers/credentials.js";
 
-var google = window.google;
-var options = {
+let google = window.google;
+const options = {
     colorAxis: { colors: ["red", "orange", "green"] }
 };
 
-var formatJson = (json) => {
-    var keys = Object.keys(json);
-    var array = [];
+let formatJson = (json) => {
+    let keys = Object.keys(json);
+    let array = [];
     keys.forEach(function (key, index){
-        var value = json[key];
+        let value = json[key];
         if(!_.isUndefined(value)) {
             array.push([key, value]);
         }
     });
     return array;
 };
-class Map extends Component {
+class Map extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -33,10 +33,10 @@ class Map extends Component {
     }
 
     drawRegionsMap = () => {
-        var chart = new google.visualization.GeoChart(document.getElementById("map"));
+        let chart = new google.visualization.GeoChart(document.getElementById("map"));
         axios.get("http://localhost:3001/data")
             .then((res) => {
-                var dataTable = formatJson(res.data);
+                let dataTable = formatJson(res.data);
                 chart.draw(google.visualization.arrayToDataTable(dataTable), options);
             });
     }

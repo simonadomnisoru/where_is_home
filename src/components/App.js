@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Map from "./Map";
 import Search from "./Search";
 import CriterionForm from "./CriterionForm";
@@ -7,7 +7,7 @@ import Header from "./Header";
 import actionTypes from "../state/actionTypes";
 import store from "../state/store";
 import "../style/style.css";
-class App extends Component {
+class App extends React.Component {
     constructor() {
         super();
         this.state = {

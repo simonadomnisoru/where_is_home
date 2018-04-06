@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import _ from "lodash";
 import ButtonNavigation from "./ButtonNavigation";
@@ -7,7 +7,7 @@ import actionTypes from "../state/actionTypes";
 import Validation from "../helpers/Validation";
 import { FormGroup, ControlLabel, FormControl, Col, Grid, Row, Button } from "react-bootstrap";
 
-class CriterionForm extends Component {
+class CriterionForm extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.countriesValue = [];
@@ -64,7 +64,7 @@ class CriterionForm extends Component {
         );
     }
     handleSubmit = () => {
-        var isValid = this.countriesValue.filter(function (item, key) {
+        let isValid = this.countriesValue.filter(function (item, key) {
             return Validation(item.value);
         });
         if (isValid.length === _.size(this.state.countries)) {
