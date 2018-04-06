@@ -1,9 +1,8 @@
 "use strict";
 const bodyParser = require("body-parser");
 const express = require("express");
-const insertstuff = require("./dbScripts/countriesInsert.js");
-const insertCriterion = require("./dbScripts/criterionsInsert.js");
-const findCriterion = require("./dbScripts/criterionsFind.js");
+const country = require("./models/country.js");
+const criterion = require("./models/criterion.js");
 
 let app = express();
 let port = process.env.API_PORT || 3001;
@@ -27,6 +26,6 @@ app.listen(port, function () {
     console.log("api running on port ${port}");
 });
 
-//insertCriterion("test");
-//insertstuff();
-//findCriterion("Afghanistan");
+//country.create();
+//criterion.createAll("test1");
+criterion.getByCountry("Afghanistan");

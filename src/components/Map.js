@@ -19,34 +19,29 @@ let formatJson = (json) => {
     });
     return array;
 };
-class Map extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
-    renderMap = () => {
-        google.charts.load("current", {
-            "packages": ["geochart"],
-            "mapsApiKey": Credentials.GeoChartKey
+let renderMap = () => {
+    google.charts.load("current", {
+        "packages": ["geochart"],
+        "mapsApiKey": Credentials.GeoChartKey
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+}
+
+let drawRegionsMap = () => {
+    let chart = new google.visualization.GeoChart(document.getElementById("map"));
+    axios.get("http://localhost:3001/data")
+        .then((res) => {
+            let dataTable = formatJson(res.data);
+            chart.draw(google.visualization.arrayToDataTable(dataTable), options);
         });
-        google.charts.setOnLoadCallback(this.drawRegionsMap);
-    }
-
-    drawRegionsMap = () => {
-        let chart = new google.visualization.GeoChart(document.getElementById("map"));
-        axios.get("http://localhost:3001/data")
-            .then((res) => {
-                let dataTable = formatJson(res.data);
-                chart.draw(google.visualization.arrayToDataTable(dataTable), options);
-            });
-    }
-
+}
+export default class Map extends React.PureComponent {
     componentDidMount() {
-        this.renderMap();
+        renderMap();
     }
 
     render() {
-
         return (
             <div id="rotate">
                 <div id="map"></div>
@@ -54,5 +49,3 @@ class Map extends React.Component {
         );
     }
 }
-
-export default Map;

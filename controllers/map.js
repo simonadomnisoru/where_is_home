@@ -1,7 +1,7 @@
 "use strict";
 const express = require("express");
 const mongoose = require("mongoose");
-const Country = require("../models/country");
+const Country = require("../schemas/country");
 const credentials = require("./dbcredentials.js");
 const router = express.Router();
 

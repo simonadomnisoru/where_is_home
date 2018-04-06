@@ -1,26 +1,29 @@
 "use strict";
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const Country = require("../schemas/country");
+const Criterion = require("../schemas/criterion");
 
-let CreateCriterionSchema = function (countryName) {
-    let CriterionSchema = new Schema({
-        name: {
-            type: String,
-            required: true
-        },
-        countryId: {
-            type: String,
-            required: true
-        },
-        value: {
-            type: Number,
-        }
-    }, {
-        collection: countryName
+exports.createAll = function(name) {
+    Country.find({}, function (err, countries) {
+        countries.forEach(function (country) {
+            exports.createOne(country, 0, name);
+        });
     });
+}
 
-    let criterionModel = mongoose.model(countryName, CriterionSchema);
-    return criterionModel;
-};
+exports.createOne = function(country, value, name) {
+    let CriterionModel = Criterion(country.name);
+    let criterion = new CriterionModel();
+    criterion.name = name;
+    criterion.value = value;
+    criterion.countryId = country._id;
+    criterion.save();
+}
 
-module.exports = CreateCriterionSchema;
+exports.getByCountry = function(name) {
+    let criterionModel = Criterion(name);
+    criterionModel.find({}, function (err, criterions) {
+        console.log(criterions);
+    });
+}
+
+module.exports = exports;
